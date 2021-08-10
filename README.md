@@ -30,8 +30,8 @@ The following tools and frameworks were used in the construction of the project:
 ## How to run
 
 1. Clone this repository: git clone https://github.com/rafaelib/front-my-wallet.git
-2. Clone the back-end repository at https://github.com/rafaelib/backend-my-wallet.git
-3. Follow instructions to run back-end at https://github.com/rafaelib/backend-my-wallet.git
+2. Clone the back-end repository at https://github.com/rafaelib/back-my-wallet.git
+3. Follow instructions to run back-end at https://github.com/rafaelib/back-my-wallet.git
 4. Install dependencies
 
 ```bash
