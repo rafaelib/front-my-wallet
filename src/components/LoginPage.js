@@ -14,22 +14,21 @@ const LoginPage = () => {
 
   const { user, setUser } = useContext(UserContext);
 
-  useEffect(()=>{
-    if(user){
-        history.push('/history');
+  useEffect(() => {
+    if (user) {
+      history.push("/history");
     }
-  },[user])
+  }, [user]);
 
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    
+
     const promise = axios.post("http://localhost:4000/sign-in", {
-      "email": email,
-      "password": password
-  });
+      email: email,
+      password: password,
+    });
     promise.then((response) => {
-      console.log(response.data);
       setUser(response.data);
       localStorage.setItem("user", JSON.stringify(response.data));
       setIsLoading(false);
@@ -66,7 +65,9 @@ const LoginPage = () => {
             Entrar
           </button>
         </form>
-        <Link to="/signup"><span>Primeira vez? Cadastre-se!</span></Link>
+        <Link to="/signup">
+          <span>Primeira vez? Cadastre-se!</span>
+        </Link>
       </Content>
     </Body>
   );

@@ -14,12 +14,11 @@ const History = () => {
   let history = useHistory();
 
   const { user, setUser } = useContext(UserContext);
-  console.log(user);
 
   useEffect(() => {
     const config = {
       headers: {
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${user}`,
       },
     };
     const request = axios.get("http://localhost:4000/transactions", config);
@@ -34,7 +33,7 @@ const History = () => {
 
   function logout() {
     const config = {
-      headers: { Authorization: `Bearer ${user.token}` },
+      headers: { Authorization: `Bearer ${user}` },
     };
     const promise = axios.post("http://localhost:4000/sign-out", {}, config);
     promise.then(() => {
@@ -217,11 +216,11 @@ const Content = styled.div`
     }
   }
 
-  .green{
+  .green {
     color: green;
-}
+  }
 
-.red{
+  .red {
     color: red;
-}
+  }
 `;

@@ -23,10 +23,11 @@ const LoginPage = () => {
     }
 
     const promise = axios.post("http://localhost:4000/sign-up", {
-      "name": name,
-      "email": email,
-      "password": password
-  });
+      name: name,
+      email: email,
+      password: password,
+      confirmPassword: passwordConfirmation,
+    });
 
     promise.then(() => {
       history.push("/");
@@ -77,7 +78,9 @@ const LoginPage = () => {
           />
           <button type="submit">Entrar</button>
         </form>
-        <Link to="/"><span>Primeira vez? Cadastre-se!</span></Link>
+        <Link to="/">
+          <span>Já tem uma conta? Faça o login!</span>
+        </Link>
       </Content>
     </Body>
   );

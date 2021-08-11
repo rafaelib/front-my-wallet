@@ -13,7 +13,7 @@ const MakeTransaction = () => {
 
   const { user } = useContext(UserContext);
 
-  let type = location.pathname==="/income" ? "income" : "outcome";
+  let type = location.pathname === "/income" ? "income" : "outcome";
 
   let history = useHistory();
 
@@ -29,13 +29,13 @@ const MakeTransaction = () => {
     }
 
     if (amount <= 0 || isNaN(amount)) {
-      alert("Por favor, escolha uma valor válido.");
+      alert("Por favor, escolha um valor válido.");
       setIsLoading(false);
       return;
     }
-    
+
     const config = {
-      headers: { Authorization: `Bearer ${user.token}` },
+      headers: { Authorization: `Bearer ${user}` },
     };
     const promise = axios.post(
       "http://localhost:4000/transactions",
@@ -43,7 +43,6 @@ const MakeTransaction = () => {
       config
     );
     promise.then(() => {
-
       history.push("/history");
       setIsLoading(false);
     });
@@ -56,7 +55,9 @@ const MakeTransaction = () => {
   return (
     <Body>
       <Content>
-        <h2>{location.pathname==="/income" ? "Nova entrada" : "Nova saída"}</h2>
+        <h2>
+          {location.pathname === "/income" ? "Nova entrada" : "Nova saída"}
+        </h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
