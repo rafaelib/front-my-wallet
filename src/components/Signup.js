@@ -76,11 +76,12 @@ const LoginPage = () => {
             disabled={isLoading}
             required
           />
-          <button type="submit">Entrar</button>
+          <button type="submit">Cadastrar-se</button>
         </form>
-        <Link to="/">
-          <span>Já tem uma conta? Faça o login!</span>
-        </Link>
+
+        <span>
+          <Link to="/">Já tem uma conta? Faça o login!</Link>
+        </span>
       </Content>
     </Body>
   );
@@ -155,7 +156,7 @@ const Content = styled.div`
     font-size: 15px;
     font-weight: 700;
     line-height: 18px;
-    margin-top: 36px;
+    margin-top: 22px;
     margin-bottom: 100px;
     color: #ffffff;
   }

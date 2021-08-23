@@ -18,7 +18,7 @@ const History = () => {
   useEffect(() => {
     const config = {
       headers: {
-        Authorization: `Bearer ${user}`,
+        Authorization: `Bearer ${user.token}`,
       },
     };
     const request = axios.get("http://localhost:4000/transactions", config);

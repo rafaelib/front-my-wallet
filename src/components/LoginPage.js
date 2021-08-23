@@ -65,9 +65,10 @@ const LoginPage = () => {
             Entrar
           </button>
         </form>
-        <Link to="/signup">
-          <span>Primeira vez? Cadastre-se!</span>
-        </Link>
+
+        <span>
+          <Link to="/signup">Primeira vez? Cadastre-se!</Link>
+        </span>
       </Content>
     </Body>
   );
@@ -142,7 +143,7 @@ const Content = styled.div`
     font-size: 15px;
     font-weight: 700;
     line-height: 18px;
-    margin-top: 36px;
+    margin-top: 22px;
     margin-bottom: 100px;
     color: #ffffff;
   }
