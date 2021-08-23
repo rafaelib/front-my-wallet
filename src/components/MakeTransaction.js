@@ -35,7 +35,7 @@ const MakeTransaction = () => {
     }
 
     const config = {
-      headers: { Authorization: `Bearer ${user}` },
+      headers: { Authorization: `Bearer ${user.token}` },
     };
     const promise = axios.post(
       "http://localhost:4000/transactions",
